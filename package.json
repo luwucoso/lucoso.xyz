@@ -1,6 +1,9 @@
 {
   "name": "siteorsomething",
   "version": "1.0.0",
+  "scripts": {
+    "build": "tsc src/ --outDir dist/ && sass src/ -o dist/"
+  },
   "dependencies": {
     "sass": "^1.79.0",
     "typescript": "^5.2.2"

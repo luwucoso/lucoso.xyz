@@ -29,32 +29,17 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4  
-
-      - name: Copy source directory (excluding scss & ts)
-        run: |
-          cp -r src dist
-          rm -rf dist/**/*.scss dist/**/*.ts
-      - name: Install dependencies
-        run: |
-          npm install
-      - name: Build 
-        run: |
-          npm install -g sass
-          tsc --outDir dist/scripts --rootDir src
-          sass src/**/*.scss:dist/styles/*.css
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire processed directory
-          path: './dist'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          folder: dist
-          repo: luwucoso/lucoso.xyz
+          - name: Checkout 🛎️
+            uses: actions/checkout@v4
+    
+          - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+            run: |
+              npm ci
+              npm run build
+    
+          - name: Deploy 🚀
+            uses: JamesIves/github-pages-deploy-action@v4
+            with:
+              folder: build # The folder the action should deploy.
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              repo: luwucoso/lucoso.xyz

@@ -2,7 +2,7 @@
   "name": "siteorsomething",
   "version": "1.0.0",
   "scripts": {
-    "build": "tsc src/ --outDir dist/ && sass src/ -o dist/"
+    "build": "tsc src --outDir dist && sass src -o dist"
   },
   "dependencies": {
     "sass": "^1.79.0",

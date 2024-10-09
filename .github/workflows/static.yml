@@ -38,10 +38,10 @@ jobs:
               mkdir dist
               tsc src --outDir dist && sass src -o dist
               cp -r src/* dist/ && find dist/ -type f -name "*.scss" -delete && find dist/ -type f -name "*.ts" -delete
-    
-          - name: Deploy 🚀
-            uses: JamesIves/github-pages-deploy-action@v4
+          - name: Upload artifact
+            uses: actions/upload-pages-artifact@v3
             with:
               folder: dist # The folder the action should deploy.
-              github_token: ${{ secrets.GITHUB_TOKEN }}
-              repo: luwucoso/lucoso.xyz
+          - name: Deploy to GitHub Pages
+            id: deployment
+            uses: actions/deploy-pages@v4

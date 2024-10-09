@@ -34,7 +34,8 @@ jobs:
 
       - name: Copy source directory (excluding scss & ts)
         run: |
-          cp -r --exclude="*.scss" --exclude="*.ts" src dist
+          cp -r src dist
+          rm -rf dist/**/*.scss dist/**/*.ts
       - name: Install dependencies
         run: |
           npm install

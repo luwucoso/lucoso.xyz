@@ -36,8 +36,8 @@ jobs:
             run: |
               npm install
               mkdir dist
-              cp -r src/* dist/ && find dist/ -type f -name "*.scss" -delete && find dist/ -type f -name "*.ts" -delete
               tsc src --outDir dist && sass src -o dist
+              cp -r src/* dist/ && find dist/ -type f -name "*.scss" -delete && find dist/ -type f -name "*.ts" -delete
     
           - name: Deploy 🚀
             uses: JamesIves/github-pages-deploy-action@v4

@@ -1,0 +1,9 @@
+{
+  "name": "siteorsomething",
+  "version": "1.0.0",
+  "dependencies": {
+    "sass": "^1.79.0",
+    "serve": "^15.0.0",
+    "typescript": "^5.2.2"
+  }
+}

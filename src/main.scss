@@ -1,0 +1,19 @@
+@import "mocha";
+
+      
+
+body {
+        background-color: $crust;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.centerpls {
+        max-width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+* {
+        color: $text;
+}
+

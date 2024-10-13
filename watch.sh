@@ -2,7 +2,7 @@
 # don't mind this, just a simple thing to watch changes for me
 
 function build {
-  tsc && sass src:dist --update
+  tsc && sass src:dist --update --sourcemap=none && echo "build"
   cp -r src/* dist/ && find dist/ -type f -name "*.scss" -delete && find dist/ -type f -name "*.ts" -delete
 }
 

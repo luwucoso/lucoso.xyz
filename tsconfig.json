@@ -2,9 +2,9 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
-    "sourceRoot": "src/",
+    //"sourceRoot": "src/",
     "outDir": "dist/",
-    "sourceMap": true,
+    //"sourceMap": true,
     "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,

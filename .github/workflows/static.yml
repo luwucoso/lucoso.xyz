@@ -37,7 +37,7 @@ jobs:
               npm install
               npm install -g sass
               mkdir dist
-              tsc && sass src:dist --sourcemap=none --update
+              tsc && sass src:dist --update
               cp -r src/* dist/ && find dist/ -type f -name "*.scss" -delete && find dist/ -type f -name "*.ts" -delete
           - name: Upload artifact
             uses: actions/upload-pages-artifact@v3
